@@ -1,5 +1,9 @@
 def version = "${env.BUILD_NUMBER}"
-
+pipeline {
+    agent {
+        label 'master'
+    }
+}
 node('docker') {
     stage('Checkout') {
         scm checkout
